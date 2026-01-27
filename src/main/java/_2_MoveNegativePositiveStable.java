@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class MoveNegativePositiveStable {
+public class _2_MoveNegativePositiveStable {
 
     public static List<Integer> moveNegativesFirst(List<Integer> nums) {
 

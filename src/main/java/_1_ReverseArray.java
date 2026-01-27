@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ReverseAnArray {
+public class _1_ReverseArray {
 
     public static int[] reverseArray(int[] nums) {
 

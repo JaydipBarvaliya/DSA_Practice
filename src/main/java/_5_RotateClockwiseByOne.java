@@ -1,6 +1,8 @@
-public class RotateArrayByOne {
+import java.util.Arrays;
 
-    public static int[] rotateClockwiseByOne(int[] nums) {
+public class _5_RotateClockwiseByOne {
+
+    public static int[] rotateClockwiseByOne(int[] nums, int shift) {
 
         if (nums == null || nums.length <= 1) {
             return nums;
@@ -19,10 +21,8 @@ public class RotateArrayByOne {
 
     public static void main(String[] args) {
         int[] nums = {10, 20, 30, 40, 50, 60};
-        rotateClockwiseByOne(nums);
+        rotateClockwiseByOne(nums, 1);
 
-        for (int n : nums) {
-            System.out.print(n + " ");
-        }
+        System.out.println(Arrays.toString(nums));
     }
 }

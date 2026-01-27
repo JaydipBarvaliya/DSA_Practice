@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class SortZeroOneTwo {
+public class _4_SortZeroOneTwo {
 
     public static List<Integer> sortZeroOneTwo(List<Integer> nums) {
 

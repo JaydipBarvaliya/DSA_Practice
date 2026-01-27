@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class MinMaxElementInArray {
+public class _3_MinMaxElementInArray {
 
     public static int[] minMaxElementInArray(List<Integer> nums) {
 
