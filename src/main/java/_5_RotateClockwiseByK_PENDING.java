@@ -4,19 +4,17 @@ public class _5_RotateClockwiseByK_PENDING {
 
     public static int[] rotateClockwiseByKPosition(int[] nums, int shift) {
 
-        if (nums == null || nums.length <= 1) {
-            return nums;
+        if (nums == null || nums.length <= 1) return nums;
+
+        int temp = nums[0];
+        for(int idx=0; idx<nums.length; idx++){
+
+            int nextPosition = (idx+1) % nums.length;
+            temp = nums[nextPosition];
+            nums[nextPosition] = nums[idx];
         }
 
-        int last = nums[nums.length - 1];
-
-        for (int i = nums.length - 1; i > 0; i--) {
-            nums[i] = nums[i - 1];
-        }
-
-        nums[0] = last;
-
-        return nums;
+        return null;
     }
 
     public static void main(String[] args) {
