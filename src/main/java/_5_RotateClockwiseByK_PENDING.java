@@ -2,9 +2,9 @@ import java.util.Arrays;
 
 public class _5_RotateClockwiseByK_PENDING {
 
-    public static int[] rotateClockwiseByKPosition(int[] nums, int shift) {
+    public static void rotateClockwiseByKPosition(int[] nums, int shift) {
 
-        if (nums == null || nums.length <= 1) return nums;
+        if (nums == null || nums.length <= 1) return;
 
         int temp = nums[0];
         for(int idx=0; idx<nums.length; idx++){
@@ -14,7 +14,6 @@ public class _5_RotateClockwiseByK_PENDING {
             nums[nextPosition] = nums[idx];
         }
 
-        return null;
     }
 
     public static void main(String[] args) {
