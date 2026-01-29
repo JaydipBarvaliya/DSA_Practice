@@ -1,12 +1,60 @@
 public class _8_MergeTwoSortedArrays_PENDING {
 
-//    Given two sorted arrays a[] and b[] of size n and m respectively, the task is to merge them in sorted order without using any extra space. Modify a[] so that it contains the first n elements and modify b[] so that it contains the last m elements.
-//    Examples:
+//        Sorting the entire array
+//        public void mergeArrays(int a[], int b[]) {
 //
-//    Input: a[] = [2, 4, 7, 10]
-//    b[] = [2, 3]
-//    Output: a[] = [2, 2, 3, 4], b[] = [7, 10]
-//    Explanation: After merging the two non-decreasing arrays, we get, [2, 2, 3, 4, 7, 10]
+//            if(a.length == 0 || b.length == 0) return;
+//
+//
+//            while(a[a.length - 1] > b[0]){
+//                int temp = a[a.length - 1];
+//                a[a.length - 1] = b[0];
+//                b[0] = temp;
+//                Arrays.sort(a);
+//                Arrays.sort(b);
+//            }
+//        }
 
 
+
+
+
+// only sorting what is mis-placed
+//    public void mergeArrays(int a[], int b[]) {
+//
+//        if(a.length == 0 || b.length == 0) return;
+//
+//
+//        while(a[a.length - 1] > b[0]){
+//            int temp = a[a.length - 1];
+//            a[a.length - 1] = b[0];
+//            b[0] = temp;
+//            sortA(a);
+//            sortB(b);
+//        }
+//    }
+//
+//    public void sortA(int[] arr){
+//        int last = arr.length - 1;
+//        while(last > 0 && arr[last] < arr[last - 1]){
+//            int temp = arr[last];
+//            arr[last] = arr[last - 1];
+//            arr[last - 1] = temp;
+//            last--;
+//        }
+//    }
+//
+//    public void sortB(int[] arr){
+//        int first = 0;
+//        while(first < arr.length - 1 && arr[first] > arr[first + 1]){
+//            int temp = arr[first];
+//            arr[first] = arr[first + 1];
+//            arr[first + 1] = temp;
+//            first++;
+//        }
+//    }
+
+
+
+    
 }
