@@ -1,6 +1,8 @@
+package Array;
+
 import java.util.Arrays;
 
-public class _5_RotateClockwiseByK_PENDING {
+public class _5_RotateClockwiseByK {
 
     public static void rotateClockwiseByKPosition(int[] nums, int k) {
 
@@ -23,32 +25,16 @@ public class _5_RotateClockwiseByK_PENDING {
                 }while(current!=start);
             }
         }
-
-
-//        public void rotate(int[] nums, int k) {
-//
-//            int n = nums.length;
-//            k = k % n;
-//            reversee(0, n-1, nums);
-//            reversee(0, k-1, nums);
-//            reversee(k, n-1, nums);
-//        }
-//
-//        private void reversee(int start, int end, int[] nums) {
-//
-//            while(start < end) {
-//                int temp = nums[start];
-//                nums[start] = nums[end];
-//                nums[end] = temp;
-//                start++;
-//                end--;
-//            }
-//        }
+// Another approach is to 3-step
+    // 1) reverse the entire array  O(N) == Time complexity would be O(N) and space is O(1)
+    // 2) reverse the first k elements 0(k)
+    // 3) reverse the rest n-k elements O(n-k)
 
 
     public static void main(String[] args) {
         int[] nums = {10, 20, 30, 40, 50, 60};
         rotateClockwiseByKPosition(nums, 1);
+
 
         System.out.println(Arrays.toString(nums));
     }

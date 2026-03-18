@@ -1,9 +1,13 @@
+package Array;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-//Sort based on the start time because we are scanning from left to right. we can also sort based on the end time, but in that case we have to start the scanning from the right end side.
-//when we sort based on the start time, we know that start times are sorted and 2nd start time is greater than 1st start time, so we don't have to worry about that, and we can directly compare the 2nd start time with 1st end time.
+// Sort based on the start time because we are scanning from left to right. we can also sort based on the end time, but in that
+// case we have to start the scanning from the right end side. when we sort based on the start time, we know that start times are
+// sorted and 2nd start time is greater than 1st start time, so we don't have to worry about that, and we can directly compare the
+// 2nd interval's start time with 1st interval's end time.
 
 class _7_MergeIntervals {
     public int[][] merge(int[][] intervals) {

@@ -1,3 +1,5 @@
+package Array;
+
 import java.util.List;
 
 public class _3_MinMaxElementInArray {
