@@ -1,6 +1,8 @@
 package Array;
 
 
+import java.util.Arrays;
+
 //You are given an array arr[] of non-negative numbers. Each number tells you the maximum number of steps you can jump forward from that position.
 //
 //For example:
@@ -23,4 +25,40 @@ package Array;
 //Output: -1
 //Explanation: We cannot go anywhere from the 1st element.
 public class PENDING2 {
+
+    public int jump(int[] nums) {
+
+        int[] visited = new int[nums.length];
+        Arrays.fill(visited, -1);
+
+        int result = recur(nums,0, visited);
+
+        return result == Integer.MAX_VALUE ? -1 : result;
+
+    }
+
+    int recur(int[] nums, int index, int[] visited) {
+
+        if(index >= nums.length - 1) return 0;
+
+        if(visited[index] != -1) return visited[index];
+
+        if(nums[index] == 0) return Integer.MAX_VALUE;
+
+        int totalAllowedJump = nums[index]; // 3
+        int minJump = Integer.MAX_VALUE;
+
+        for(int k = 1; k<=totalAllowedJump; k++){
+            int result = recur(nums, index+k, visited);
+
+            if(result != Integer.MAX_VALUE){
+                minJump = Math.min(minJump, 1 +  result);
+            }
+        }
+
+        visited[index] = minJump;
+        return minJump;
+    }
 }
+
+//TODO: we can also solve this problem with greedy approach, but have to understand it thoroughly.
