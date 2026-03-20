@@ -9,6 +9,7 @@ import java.util.Map;
 PROBLEM: https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 
 Input: s = "abcabcbb"
+
 Output: 3
 Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
 
@@ -23,13 +24,13 @@ Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab
 
 ------------------------------------------------------------------------------------------------------------------------
 
- Time : O(n) -- Each character enters window once, leaves once
+ Time  : O(n) -- Each character enters window once, leaves once
  Space : O(n) -- Because of HashMap
 
  */
 public class _12_LengthOfLongestSubstring {
 
-    public int lengthOfLongestSubstring(String str) {
+    public static int lengthOfLongestSubstring(String str) {
 
         Map<Character, Integer> map = new HashMap<>();
         int maxLength = 0;
@@ -52,4 +53,9 @@ public class _12_LengthOfLongestSubstring {
 
         return maxLength;
     }
+
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("abcabcbbabcdefghijklmnapqrstuvwxyz"));
+    }
+
 }

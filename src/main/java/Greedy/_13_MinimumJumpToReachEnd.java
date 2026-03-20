@@ -1,4 +1,4 @@
-package Array;
+package Greedy;
 
 
 import java.util.Arrays;
@@ -42,8 +42,13 @@ Approach - (Recursion + Memoization)
 
 ------------------------------------------------------------------------------------------------------------------------
 
-Time :
-Space :
+
+Time : O(n*n) = O(n)^2  →  O(n)
+Space : O(n) momoization + O(n) recursion = O(n)
+
+
+GREEDY APPROACH : Time : O(n) //TODO:
+                : Space : O(1)
 
 */
 
@@ -63,9 +68,9 @@ public class _13_MinimumJumpToReachEnd {
 
     int recur(int[] nums, int index, int[] visited) {
 
-        if(index >= nums.length - 1) return 0;
+        if(index >= nums.length - 1) return 0; //base case
 
-        if(visited[index] != -1) return visited[index];
+        if(visited[index] != -1) return visited[index]; //memoization
 
         if(nums[index] == 0) return Integer.MAX_VALUE;
 
