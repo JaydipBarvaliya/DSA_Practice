@@ -91,3 +91,9 @@ public class _13_MinimumJumpToReachEnd {
 }
 
 // TODO: we can also solve this problem with greedy approach, but have to understand it thoroughly.
+
+//TODO: what is greedy, greedy vs DP ,,,,,check the patterns................
+//TODO: understand the merge sort and it's pattern and applicable problems...........
+//TODO: revise the KADANE algo
+//TODO: https://www.geeksforgeeks.org/problems/maximum-trains-for-which-stoppage-can-be-provided/1
+//TODO: do revise all the problems:::

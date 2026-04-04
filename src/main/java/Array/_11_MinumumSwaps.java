@@ -69,4 +69,3 @@ public class _11_MinumumSwaps {
 //        System.out.println(result);
         }
 }
-//TODO: rename the variables

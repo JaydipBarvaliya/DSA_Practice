@@ -1,4 +1,4 @@
-package Array;
+package XSamples;
 
 /**
 
@@ -25,8 +25,6 @@ Space :
 ------------------------------------------------------------------------------------------------------------------------
 
 */
-class Solution {
-    public static void main(String[] args) {
+class _22_ {
 
-    }
 }

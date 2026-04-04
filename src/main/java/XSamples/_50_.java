@@ -1,10 +1,9 @@
-package SearchingAndSorting;
+package XSamples;
 
 
 /**
 
  PROBLEM:
- https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 
  ------------------------------------------------------------------------------------------------------------------------
 
@@ -27,6 +26,5 @@ package SearchingAndSorting;
  ------------------------------------------------------------------------------------------------------------------------
 
  */
-
-public class _15_ {
+public class _50_ {
 }
