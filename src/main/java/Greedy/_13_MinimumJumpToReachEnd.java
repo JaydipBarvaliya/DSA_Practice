@@ -31,7 +31,7 @@ Output: -1
 Explanation: We cannot go anywhere from the 1st element.
 ------------------------------------------------------------------------------------------------------------------------
 
-Approach - (Recursion + Memoization)
+ Approach - (Recursion + Memoization)
  1) From each position, try all jumps you can make
  2) For every jump, check how many steps it takes to reach the end
  3) Pick the path with minimum jumps
@@ -40,60 +40,76 @@ Approach - (Recursion + Memoization)
  6) If reached end → 0 jumps needed
  7) If no path works → return -1
 
+
+ Edge Understanding:
+ Bigger window already contains the smaller window. So by always choosing the farthest reach, you automatically cover everything inside it.
+ Nothing gets skipped.
+
+ That's exactly why greedy works here and why we don't need DP.
+ In DP you'd say "let me explore every possible path and remember results."
+ In greedy you say "the biggest window swallows all smaller windows — so just track the biggest one."
 ------------------------------------------------------------------------------------------------------------------------
 
 
-Time : O(n*n) = O(n)^2  →  O(n)
-Space : O(n) memoization + O(n) recursion = O(n)
+BRUTE : Time  : O(n*n) = O(n)^2  →  O(n)
+        Space : O(n) memoization + O(n) recursion = O(n)
 
+ DP APPROACH     : Time : O(n)
+                 : Space : O(1)
 
-GREEDY APPROACH : Time : O(n) //TODO:
+GREEDY APPROACH : Time : O(n)
                 : Space : O(1)
 
 */
 
+
 public class _13_MinimumJumpToReachEnd {
 
-    public int jump(int[] nums) {
+    static class DP_APPROACH {
 
-        int[] visited = new int[nums.length];
+        public int jump(int[] nums) {
+            int[] dp = new int[nums.length];
+            Arrays.fill(dp, -1);
+            return dfs(nums, 0, dp);
+        }
 
-        Arrays.fill(visited, -1);
+        public int dfs(int[] nums, int idx, int[] dp) {
+            if (idx == nums.length - 1) return 0;
+            if (idx >= nums.length) return Integer.MAX_VALUE;
 
-        int result = recur(nums,0, visited);
+            if (dp[idx] != -1) return dp[idx];
 
-        return result == Integer.MAX_VALUE ? -1 : result;
-
+            int minJump = Integer.MAX_VALUE;
+            for (int i = 1; i <= nums[idx]; i++) {
+                int result = dfs(nums, idx + i, dp); // we could have also do the 1 + dfs() but that will result in Integer overflow because of 1 +.
+                if (result != Integer.MAX_VALUE) {
+                    minJump = Math.min(minJump, 1 + result); // to handle the integer overflow, we first calculate the answer and check if it not +infinite. If it is not then add +1 into it.
+                }
+            }
+            dp[idx] = minJump;
+            return minJump;
+        }
     }
 
-    int recur(int[] nums, int index, int[] visited) {
 
-        if(index >= nums.length - 1) return 0; //base case
+    static class GREEDY_APPROACH {
 
-        if(visited[index] != -1) return visited[index]; //memoization
+            public int jump(int[] nums) {
+                int farthest = 0;
+                int minJump = 0;
+                int currEnd = 0;
 
-        if(nums[index] == 0) return Integer.MAX_VALUE;
+                for (int i = 0; i < nums.length-1; i++) { // we are doing nums.length-1 because we don't want to calculate answer for last element in the array.
 
-        int totalAllowedJump = nums[index];
-        int minJump = Integer.MAX_VALUE;
+                    farthest = Math.max(farthest, i + nums[i]);
 
-        for(int k = 1; k<=totalAllowedJump; k++){
-            int result = recur(nums, index+k, visited);
-
-            if(result != Integer.MAX_VALUE){
-                minJump = Math.min(minJump, 1 +  result);
+                    if (i == currEnd) {
+                        currEnd = farthest;
+                        minJump++;
+                    }
+                }
+                return minJump;
             }
         }
 
-        visited[index] = minJump;
-        return minJump;
-    }
 }
-
-// TODO: we can also solve this problem with greedy approach, but have to understand it thoroughly.
-
-//TODO: what is greedy, greedy vs DP ,,,,,check the patterns................
-//TODO: understand the merge sort and it's pattern and applicable problems...........
-//TODO: revise the KADANE algo
-//TODO: https://www.geeksforgeeks.org/problems/maximum-trains-for-which-stoppage-can-be-provided/1
-//TODO: do revise all the problems:::

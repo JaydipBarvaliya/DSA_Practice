@@ -1,8 +1,8 @@
-package XSamples;
+package Greedy;
 
 /**
 
- PROBLEM:
+ PROBLEM: https://www.geeksforgeeks.org/problems/maximum-trains-for-which-stoppage-can-be-provided/1
 
  ------------------------------------------------------------------------------------------------------------------------
 
