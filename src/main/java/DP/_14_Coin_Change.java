@@ -11,7 +11,7 @@ public class _14_Coin_Change {
             Arrays.fill(dp[i], -1);
         }
 
-        int ans = dfs(coins, 0, 0, target, 0, dp);
+        int ans = dfs(coins, 0, 0, target, dp);
         if(ans == Integer.MAX_VALUE) return -1;
         return ans;
     }

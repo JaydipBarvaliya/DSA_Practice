@@ -14,7 +14,7 @@ If arr[i] = 3, you can jump to index i + 1, i + 2, or i + 3 from position i.
 If arr[i] = 0, you cannot jump forward from that position.
 Your task is to find the minimum number of jumps needed to move from the first position in the array to the last position.
 
-Note:  Return -1 if you can't reach the end of the array.
+Return -1 if you can't reach the end of the array.
 
 Examples :
 
@@ -44,7 +44,7 @@ Approach - (Recursion + Memoization)
 
 
 Time : O(n*n) = O(n)^2  →  O(n)
-Space : O(n) momoization + O(n) recursion = O(n)
+Space : O(n) memoization + O(n) recursion = O(n)
 
 
 GREEDY APPROACH : Time : O(n) //TODO:
