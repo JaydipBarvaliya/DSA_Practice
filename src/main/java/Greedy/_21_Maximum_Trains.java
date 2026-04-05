@@ -2,6 +2,8 @@ package Greedy;
 
 /**
 
+ TODO:
+
  PROBLEM: https://www.geeksforgeeks.org/problems/maximum-trains-for-which-stoppage-can-be-provided/1
 
  ------------------------------------------------------------------------------------------------------------------------
@@ -25,5 +27,5 @@ package Greedy;
  ------------------------------------------------------------------------------------------------------------------------
 
  */
-public class _21_ {
+public class _21_Maximum_Trains {
 }

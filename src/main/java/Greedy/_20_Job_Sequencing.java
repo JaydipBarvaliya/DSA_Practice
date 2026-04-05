@@ -1,6 +1,7 @@
 package Greedy;
 
 /**
+TODO:
 
  PROBLEM: https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1
 
@@ -26,5 +27,5 @@ package Greedy;
 
  */
 
-public class _20_ {
+public class _20_Job_Sequencing {
 }
