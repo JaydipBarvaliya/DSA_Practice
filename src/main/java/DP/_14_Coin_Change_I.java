@@ -2,7 +2,7 @@ package DP;
 
 import java.util.Arrays;
 
-public class _14_Coin_Change {
+public class _14_Coin_Change_I {
 
     public int coinChange(int[] coins, int target) {
 

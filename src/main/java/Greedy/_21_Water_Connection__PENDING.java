@@ -1,20 +1,16 @@
-package SearchingAndSorting;
-
+package Greedy;
 
 
 /**
-
- TODO:
- PROBLEM:
-
+ PROBLEM: https://www.geeksforgeeks.org/problems/water-connection-problem5822/1
  ------------------------------------------------------------------------------------------------------------------------
 
  Approach:
- 1) Given an unsorted array
- 2) Divide the array in 2 halves
- 3) Sort both the halves using the merge sort (it's recursion)
- 4) Call the merge sort for halves
- 5) merge the two sorted array
+ 1)
+ 2)
+ 3)
+ 4)
+ 5)
  6)
  7)
  8)
@@ -28,5 +24,6 @@ package SearchingAndSorting;
  ------------------------------------------------------------------------------------------------------------------------
 
  */
-public class _19_MergeSort {
+public class _21_Water_Connection__PENDING {
+
 }

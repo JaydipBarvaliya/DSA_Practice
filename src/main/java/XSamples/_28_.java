@@ -2,7 +2,7 @@ package XSamples;
 
 /**
 
-PROBLEM:
+PROBLEM: https://www.geeksforgeeks.org/problems/minimum-cost-to-cut-a-board-into-squares/1
 
 ------------------------------------------------------------------------------------------------------------------------
 

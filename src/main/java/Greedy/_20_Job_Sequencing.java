@@ -9,6 +9,17 @@ import java.util.Arrays;
 
  ------------------------------------------------------------------------------------------------------------------------
 
+
+ deadline[] = [4, 1, 1, 1],
+ profit[] =   [20, 10, 40, 30]
+
+ 40 30 20 10......................1000000
+ 5  4  3  2
+
+
+ tracking = _ 40 _ _ _ 20 _                 -----    ------    ----
+            0 1  2  3  4
+
  Approach:
  1) Create a 2D array of deadline and profit
  2) Sort that 2D array by Profit descending, because we want maximum profit
@@ -57,6 +68,7 @@ import java.util.Arrays;
 
  */
 
+//TODO: solve this problem by priority Queue
 public class _20_Job_Sequencing {
 
     public ArrayList<Integer> jobSequencing(int[] deadlines, int[] profits) {

@@ -1,8 +1,8 @@
-package XSamples;
+package Greedy;
 
 /**
 
-PROBLEM: https://www.geeksforgeeks.org/problems/meeting-rooms-iii/1
+PROBLEM: https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -24,7 +24,11 @@ Space :
 
 ------------------------------------------------------------------------------------------------------------------------
 
+
+ logN-1 + logN-2 + logN-3 ...+ logN-N = N*Log(N)
+ logN  + logN + logN ...+ logN = N*Log(N)
+
 */
-class _24_Meeting_Rooms_III {
+class _25_Minimum_Cost_Of_Ropes_PENDING {
 
 }

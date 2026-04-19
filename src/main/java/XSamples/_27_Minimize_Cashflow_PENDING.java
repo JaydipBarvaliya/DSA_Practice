@@ -2,7 +2,7 @@ package XSamples;
 
 /**
 
-PROBLEM: https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1
+PROBLEM: https://www.geeksforgeeks.org/problems/minimize-cash-flow/1
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -25,6 +25,6 @@ Space :
 ------------------------------------------------------------------------------------------------------------------------
 
 */
-class _23_Meeting_Rooms_II {
+class _27_Minimize_Cashflow_PENDING {
 
 }

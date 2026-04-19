@@ -2,7 +2,7 @@ package XSamples;
 
 /**
 
-PROBLEM: https://www.geeksforgeeks.org/problems/attend-all-meetings/1
+PROBLEM: https://www.geeksforgeeks.org/problems/attend-all-meetings-ii/1
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -25,6 +25,6 @@ Space :
 ------------------------------------------------------------------------------------------------------------------------
 
 */
-class _22_Meeting_Rooms_I {
+class _23_Meeting_Rooms_II_PENDING {
 
 }

@@ -11,15 +11,15 @@ import java.util.Map;
 
  ------------------------------------------------------------------------------------------------------------------------
 
- Approach:
+ Approach: [Platform of trains are fixed from start]
  1) collect all the train which are associated with the same platform in Map
  2)
  3) sort the list of array on each platform in ASC order by their departure time
  4)
  5) We are sorting by departure time, because earlier the train left
- 6) Earlier the platform become empty, and early it get empty, more train we can accommodate
+ 6) Earlier the platform becomes empty, and early it gets empty, more train we can accommodate
  7)
- 8)  start iterating each of the intervals on each platform
+ 8) start iterating each of the intervals on each platform
  9) if they are overlapping then discard otherwise increase the totalTrainCounter
 10) This problem is almost same as merge interval, just have to understand how to sort initially.
  ------------------------------------------------------------------------------------------------------------------------
@@ -31,14 +31,13 @@ import java.util.Map;
  ------------------------------------------------------------------------------------------------------------------------
 
  */
-public class _21_Maximum_Trains {
+public class _21_Maximum_Trains_With_Platforms {
 
     public int maxStop(int totalPlatforms, int[][] trains) {
 
         Map<Integer, List<int[]>> map = new HashMap<>();
 
-        int idx = 0;
-        for(int[] train : trains){
+        for(int[] train : trains){ //O(n)
             int arrival   = train[0];
             int departure = train[1];
             int platform  = train[2];
@@ -56,7 +55,6 @@ public class _21_Maximum_Trains {
 
         int totalTrainCount = 0;
         for (var entry : map.entrySet()) {
-            int platform = entry.getKey();
             List<int[]> list = entry.getValue();
 
             list.sort((a,b) -> a[1] - b[1]);
