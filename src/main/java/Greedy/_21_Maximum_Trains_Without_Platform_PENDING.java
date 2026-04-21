@@ -22,8 +22,11 @@ import java.util.Map;
  k = 2
  trains[][] = [[900,1000], [930,1100], [1010,1200], [1030,1130], [1200,1300]]
 
+ sorted [[900,1000], [930,1100], [1030,1130], [1010,1200], [1200,1300]]
 
- //TODO: this can be solved without Map and MinHeap as initial array would be already sorted by their departure time....so at most we need iteration over each...think of it
+
+ //TODO: this can be solved without Map and MinHeap as initial array would be already sorted by their departure time....
+ // so at most we need iteration over each...think of it
 
 
  1 --> [1030,1130]
