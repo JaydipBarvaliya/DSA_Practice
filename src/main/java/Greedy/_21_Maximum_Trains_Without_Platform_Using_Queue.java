@@ -2,7 +2,8 @@ package Greedy;
 
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  TODO:
@@ -33,55 +34,48 @@ import java.util.PriorityQueue;
  Hence maximum 4 trains (T1, T2, T4, T5) can be accommodated.
  ------------------------------------------------------------------------------------------------------------------------
 
- Approach:
- 1) sort the 2D array by their departure time in ASC order so that we can iterate in departing manner where we are processig a train which depart earlier
- 2) Whatever trains we are processing and eligible to stay on the platform and which has no time conflict with other trains, we store those trains in the meanHeap
- 3) We can also use the map to track all the trains which comes to specefic platform, but we have to scan the entire map to understand which platform gets free earliest for the future train which required scan of all the entries in the map,
-    instead minHeap will give us the direct answer
- 4) if any train needs a new platform, then first we check the size of the minHeap, if we have enough platform then we'll add it in the heap,
- 5) if any train needs a new platform and minHeap is full then we will discard that train which means, we don't have enough platform
- 6) Whenever we add anything new to minHeap, we count that as an eligible train.
- 7) at last, return the count which defines, total number of trains we can accomodate.
+ Approach: PENDING
+ 1)
+ 2)
+ 3)
+ 4)
+ 5)
+ 6)
+ 7)
  8)
  ------------------------------------------------------------------------------------------------------------------------
 
- Time : nlog(n)
- Sorting is still O(n log n).
- But inside the loop, each iteration does O(log k) work — not O(1) — because minheap.add() and minheap.poll() on a PriorityQueue cost O(log k) to maintain the heap property.
- So iteration is O(n log k), not O(n).
- Total: O(n log n + n log k)
- Since k ≤ n, log k ≤ log n, so this simplifies to O(n log n) still — the sorting dominates.
-
-
- Space :
+ Time:  O(n) + O(nlogn) = O(n log n).
+ Space: The queue stores one departure time per platform, not one per train. So no matter how many trains there are, the queue never grows beyond k
  ------------------------------------------------------------------------------------------------------------------------
  */
-public class _21_Maximum_Trains_Without_Platform {
+public class _21_Maximum_Trains_Without_Platform_Using_Queue {
 
-    public static int maximumTrainWithoutPlatforms(int totalPlatforms, int[][] trains) {
+    public static int maximumTrainWithoutPlatformsUsingQueue(int totalPlatforms, int[][] trains) {
 
         Arrays.sort(trains, (a, b) -> a[1] - b[1]);
+        Queue<Integer> queue = new LinkedList<>();
 
-        PriorityQueue<Integer> minheap = new PriorityQueue<>();
         int count = 0;
-        for(int[] comingTrain : trains){
-            int arrTime = comingTrain[0];
-            int departTime = comingTrain[1];
+        for(int[] train : trains){
+            int futureArr = train[0];
+            int futureDep = train[1];
 
-            if(!minheap.isEmpty()){
-                if(arrTime <= minheap.peek() && minheap.size() < totalPlatforms){ // cannot use existing platform, but we have other empty platform
-                    minheap.add(departTime);
+            if(queue.isEmpty()){
+                queue.add(futureDep);
+                count++;
+            }else{
+
+                int currDep = queue.peek();
+
+                if(currDep < futureArr){ // use existing platform
+                    queue.poll();
+                    queue.add(futureDep);
                     count++;
-                }else if(arrTime <= minheap.peek() && minheap.size() >= totalPlatforms){ // cannot use existing platform, and also don't have enough platform, then just discard the train
-                    // we are keeping this empty for the learning purpose in the future, so that we can remember this.
-                }else if(arrTime > minheap.peek()){ // we can use existing platform
-                    minheap.poll();
-                    minheap.add(departTime);
+                }else if(queue.size() < totalPlatforms){ // assign a new platform
+                    queue.add(futureDep);
                     count++;
                 }
-            }else{
-                minheap.add(departTime);
-                count++;
             }
         }
         return count;
@@ -151,7 +145,7 @@ public class _21_Maximum_Trains_Without_Platform {
     }
 
     static void test(String label, int k, int[][] trains, int expected) {
-        int result = maximumTrainWithoutPlatforms(k, trains);
+        int result = maximumTrainWithoutPlatformsUsingQueue(k, trains);
         String status = result == expected ? "PASS" : "FAIL";
         System.out.printf("[%s] %s | expected=%d got=%d%n", status, label, expected, result);
     }
