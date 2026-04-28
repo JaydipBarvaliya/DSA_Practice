@@ -1,4 +1,4 @@
-package Array;
+package XSamples;
 
 public class _8_MergeTwoSortedArrays_PENDING {
 

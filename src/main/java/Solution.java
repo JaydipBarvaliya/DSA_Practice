@@ -1,5 +1,3 @@
-package Array;
-
 /**
 
 PROBLEM:
