@@ -25,13 +25,12 @@ public class _6_FindAllAnagramsInString {
             char ch = str.charAt(j);
 
             if(map.containsKey(ch)){
-
-                map.put(ch, map.get(ch) - 1); // here we first adjust the frequency then we check that if it less than 0 means duplicate and
-                                            // in that case we don't require that character anymore so that is why we are not reducing its frequency.
-
+                
                 if(map.get(ch) > 0){
                     requiredChar--;
                 }
+                map.put(ch, map.get(ch)-1);
+
             }
             if(j-i+1 == p.length()){
 
@@ -40,12 +39,12 @@ public class _6_FindAllAnagramsInString {
                 }
                 char left = str.charAt(i);
                 if(map.containsKey(left)){
+                    map.put(left, map.get(left) + 1);
 
-                    map.put(ch, map.get(left) + 1); // here also we do frequency adjustment first and then requireChar count later.
-
-                    if(map.get(left) > 0){
+                    if(map.get(left) >0){
                         requiredChar++;
                     }
+
                 }
                 i++;
             }
@@ -53,5 +52,4 @@ public class _6_FindAllAnagramsInString {
         }
         return result;
     }
-
 }
