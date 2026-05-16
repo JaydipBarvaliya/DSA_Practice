@@ -3,12 +3,11 @@ package SlidingWindow;
 import java.util.HashMap;
 import java.util.Map;
 
-public class _2_LongestSubstringWithExactlyKDistinct {
-
 //    Input:  s = "aabacbebebe", k = 3
 //    Output: 7
 //    Explanation: "cbebebe" has exactly 3 distinct characters c, b, e
 
+public class _2_LongestSubstringWithExactlyKDistinct {
 
     public int longestKSubStr(String str, int k) {
 
