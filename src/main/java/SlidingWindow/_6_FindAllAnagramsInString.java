@@ -25,11 +25,10 @@ public class _6_FindAllAnagramsInString {
             char ch = str.charAt(j);
 
             if(map.containsKey(ch)){
-                
                 if(map.get(ch) > 0){
                     requiredChar--;
                 }
-                map.put(ch, map.get(ch)-1);
+                map.put(ch, map.get(ch) - 1);
 
             }
             if(j-i+1 == p.length()){
@@ -38,10 +37,10 @@ public class _6_FindAllAnagramsInString {
                     result.add(i);
                 }
                 char left = str.charAt(i);
+
                 if(map.containsKey(left)){
                     map.put(left, map.get(left) + 1);
-
-                    if(map.get(left) >0){
+                    if(map.get(left)>0){
                         requiredChar++;
                     }
 
