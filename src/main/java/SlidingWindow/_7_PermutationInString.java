@@ -3,6 +3,30 @@ package SlidingWindow;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+
+PROBLEM: Permutation in String (LeetCode #567)
+https://leetcode.com/problems/permutation-in-string/
+Given strings s1 and s2, return true if any permutation of s1 exists as a substring in s2.
+Example: s1 = "ab", s2 = "eidbaooo" → true (contains "ba")
+
+------------------------------------------------------------------------------------------------------------------------
+
+Approach:
+1) Identical structure to Find All Anagrams — return true on first match instead of collecting indices
+2) Build freq map of s1; set requiredChar = s1.length()
+3) Fixed window of size s1.length() slides over s2
+4) Expand right: decrement requiredChar when a needed char is matched
+5) When window is full: if requiredChar == 0 → return true; else slide and restore left char to map
+
+------------------------------------------------------------------------------------------------------------------------
+
+Time : O(n) — n = s2.length(); single pass through s2
+Space: O(1) — map holds at most 26 distinct characters
+
+------------------------------------------------------------------------------------------------------------------------
+
+*/
 public class _7_PermutationInString {
 
     public boolean checkInclusion(String p, String str) {

@@ -3,6 +3,31 @@ package SlidingWindow;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+
+PROBLEM: Longest Repeating Character Replacement (LeetCode #424)
+https://leetcode.com/problems/longest-repeating-character-replacement/
+Given string s and integer k, return the length of the longest substring that can be made of a
+single letter by replacing at most k characters.
+Example: s = "AABABBA", k = 1 → 4
+
+------------------------------------------------------------------------------------------------------------------------
+
+Approach:
+1) Track character frequencies in the window using a HashMap (or int[26])
+2) Track maxFreq — the highest frequency of any single char currently in the window
+3) Window is valid when (windowSize - maxFreq) <= k (characters needing replacement fit within k)
+4) If invalid → shrink from left by ONE step only (no inner loop); maxFreq never decreases — key insight
+5) Update longest = max(longest, windowSize) after every step
+
+------------------------------------------------------------------------------------------------------------------------
+
+Time : O(n) — betterSolution is a true single pass; each element is visited once
+Space: O(1) — frequency array of fixed size 26
+
+------------------------------------------------------------------------------------------------------------------------
+
+*/
 public class _4_LongestRepeatingCharacterReplacement {
 
     public int characterReplacement(String str, int k) {
